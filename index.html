@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> Using JavaScript to create Objects - Module 05 Assignment</title>
+  </head>
+  <body>
+
+    <script>
+
+      //Creating a Object literal named "mydog"
+    let myDog = {
+      name : "Jake",
+      breed: "dog with magical powers",
+      tvProgram: "Adventure Time",
+      mySound: "I actually sound as a human",
+    };
+
+    //displaying the message on the page
+    alert("Hello, my name is " + myDog.name +", "+ "when I bark "+ myDog.mySound + ". " + "I starred in the Tv Show " + myDog.tvProgram + ". " +
+    "My character was a " + myDog.breed + ". " + "I was Finn's dog, a 14-year-old boy, living in the post-apocalyptic Land of Ooo. ");
+
+    //Creating an Object Constructor
+    //Define a constructor function for the Dog object
+function Dog(name, breed, tvProgram, mySound, canTalk) {
+  this.name = name;
+  this.breed = breed;
+  this.tvProgram = tvProgram;
+  this.mySound = mySound;
+  this.canTalk = canTalk;
+
+  // Define a method for the Dog object
+  this.myGreeting = function () {
+    let soundDescription = this.canTalk ? "I am not scary, but don't understimate me!" : "I don't talk";
+    return (
+      "Hello, my name is " +
+      this.name +
+      ", when I bark " +
+      soundDescription +
+      ". " +
+      "I starred in the TV show " +
+      this.tvProgram +
+      ". " +
+      "My character was a " +
+      this.breed +
+      "I was Kevin Whitney's (formerly Superman's) dog and best friend; I am a dog from Superman's planet living on Earth as the pet of a 9-year-old boy. " +
+      ""
+    );
+  };
+}
+
+// Create a new dog object using the constructor
+let myDogConst = new Dog(
+  "Krypto",
+  "White Labrador Retriever",
+  "Krypto the Superdog",
+  "I don't talk",
+  true
+);
+
+// Call the myGreeting method to display the greeting
+document.write(myDogConst.myGreeting());
+
+    </script>
+
+    </body>
+    </HTML>
